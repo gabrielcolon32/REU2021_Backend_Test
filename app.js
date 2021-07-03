@@ -2,22 +2,18 @@ const express = require('express');
 const db = require('./db/index');
 const app = express();
 
-
-//Middlewares execute everytime we change route
-// app.use('/posts', () => {
-//     console.log("Hello!");
-// });
+// Import Routes
+const postsRoute = require('./routes/posts');
+const userRoute = require('./routes/user');
 
 db.on('error', console.error.bind(console, 'MongoDB connection error: '))
 
 // Routes
-app.get('/', (req, res) => {
-    res.send('Home Page!')
-});
 
-app.get('/posts', (req, res) => {
-    res.send('Post Page!')
-});
+//Middlewares execute everytime we change route
+app.use('/posts', postsRoute);
+
+app.use('/user', userRoute);
 
 
 // Listen at port 3000

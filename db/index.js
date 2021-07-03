@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-dotenv.config();
+require('dotenv/config');
 
 // Connect to database
 try{
-    mongoose.connect("mongodb://127.0.0.1:27017/localtest", { useNewUrlParser: true, useUnifiedTopology: true } , () => {console.log('Connection to DB succesful!')})
+    mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true } , () => {console.log('Connection to DB succesful!')})
 }
 catch{ e =>
     {console.error('Connection error', e.message)}
