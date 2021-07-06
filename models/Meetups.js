@@ -17,6 +17,10 @@ const MeetupSchema = mongoose.Schema({
     description: {
         type: String,
         required: true
+    },
+    favorite: {
+        type: Number,
+        default: 0
     }
 })
 

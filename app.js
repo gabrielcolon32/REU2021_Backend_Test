@@ -8,8 +8,10 @@ const cors = require('cors');
 const postsRoute = require('./routes/posts');
 const userRoute = require('./routes/user');
 const meetupsRoute = require('./routes/meetups');
+const favoritesRoute = require('./routes/favorites');
 
 db.on('error', console.error.bind(console, 'MongoDB connection error: '))
+
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -22,6 +24,9 @@ app.use('/posts', postsRoute);
 app.use('/user', userRoute);
 
 app.use('/meetups', meetupsRoute);
+
+app.use('/favorites', favoritesRoute);
+
 
 
 // Listen at port 3000
