@@ -25,7 +25,7 @@ app.use(cors({
 //Middlewares execute everytime we change route
 app.use('/posts', postsRoute);
 
-app.use('/user', userRoute);
+app.use('/users', userRoute);
 
 app.use('/meetups', meetupsRoute);
 

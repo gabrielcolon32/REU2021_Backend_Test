@@ -21,6 +21,11 @@ const MeetupSchema = mongoose.Schema({
     favorite: {
         type: Number,
         default: 0
+    },
+    participants: {
+        type: Array,
+        of: String,
+        default: []
     }
 })
 
