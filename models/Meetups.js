@@ -25,7 +25,7 @@ const MeetupSchema = mongoose.Schema({
     participants: {
         type: Array,
         of: String,
-        default: []
+        required: true
     }
 })
 
